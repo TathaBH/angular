@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -33,13 +35,14 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class HomeComponent implements OnInit {
 
   itemCount: number;
-  btnText: string = 'Add an item';
+  btnText: string = 'Add goal';
   goalText: string;
   goals = [];
   
-  constructor() { }
+  constructor(private _data: DataService) { }
 
   ngOnInit() {
+    this._data.goals.subscribe(res => this.goals = res);
     this.itemCount = this.goals.length;
   }
   
