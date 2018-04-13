@@ -38,9 +38,11 @@ export class HomeComponent implements OnInit {
   itemCount: number;
   btnText: string = 'Add goal';
   goalText: string;
+  errorMsg: string;
   goals: any;
   
-  constructor(private _data: DataService) { }
+  constructor(private _data: DataService) {
+  }
 
   ngOnInit() {
     this._data.goal.subscribe(res => this.goals = res);
@@ -48,14 +50,13 @@ export class HomeComponent implements OnInit {
   }
   
   addGoals() {
+    if(this.goalText==null || this.goalText.replace(/\s/g,"") == ""){
+       this.errorMsg = "Please enter a goal";
+       return;
+    }
+    this.errorMsg = '';
     this.goals.push(this.goalText);
-    this.goalText = '';
-    this.itemCount = this.goals.length;
-  }
-  
-  removeGoals(goalsIndex) {
-    this.goals.splice(goalsIndex,1);
-    this.goalText = '';
+    this.goalText = null;
     this.itemCount = this.goals.length;
   }
 

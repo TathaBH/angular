@@ -10,12 +10,14 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
 import { DataService } from './data.service';
+import { BucketlistComponent } from './bucketlist/bucketlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    BucketlistComponent
   ],
   imports: [
     BrowserModule,

@@ -2,14 +2,12 @@
     display: grid;
     grid-template-columns: 50% auto;
 }
-.col {
-    padding: .4em 1.3em;
-}
+
 .color-dark {
     background: #2885C4;
 }
 .color-light {
-    background: #57B3F1;
+    background: #57B3F1; 
 }
 
 input.txt {
@@ -27,14 +25,10 @@ input.btn {
     margin-bottom:1em;
     cursor:pointer;
 }
-.life-container {
-    background:#3FA0E1;
-    padding:.5em;
-    font-weight:bold;
-    cursor:pointer;
-}
 
-#cross{
-  float: right;
-  color: red;
+.error-msg{
+  font-size: 14px;
+  font-weight: bold;
+  color:red;
+  padding: 5px;
 }
