@@ -2,5 +2,6 @@
   <p class="life-container" *ngFor = "let lifeGoal of lifeGoals; let i = index">
     {{lifeGoal}} 
     <span id="cross" (click)="removeGoals(i)">x</span>
+    
   </p>
 </div>

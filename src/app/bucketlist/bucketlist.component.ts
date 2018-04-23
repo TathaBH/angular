@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-bucketlist',
@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BucketlistComponent implements OnInit {
 
   @Input() lifeGoals: any;
+  @Output('dG') deleteGoal = new EventEmitter<number>();
+  counter: number;
   
   constructor() { }
 
@@ -16,6 +18,8 @@ export class BucketlistComponent implements OnInit {
   
   removeGoals(goalsIndex) {
     this.lifeGoals.splice(goalsIndex,1);
+    this.counter = this.lifeGoals.length;
+    this.deleteGoal.emit(this.counter);
   }
-
+  
 }

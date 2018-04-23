@@ -13,11 +13,10 @@
     <form>
       <div class="error-msg">{{errorMsg}}</div>
       <input type="text" class="txt" name="item" placeholder="your life goal.." [(ngModel)]="goalText">
-      
       <input type="submit" class="btn" [value]="btnText" (click)="addGoals()">
     </form>
   </div>
      
-  <app-bucketlist [lifeGoals]="goals"></app-bucketlist>
+  <app-bucketlist [lifeGoals]="goals" (dG)="displayItemCount($event)"></app-bucketlist>
   
 </div>

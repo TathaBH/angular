@@ -60,4 +60,7 @@ export class HomeComponent implements OnInit {
     this.itemCount = this.goals.length;
   }
 
+  displayItemCount(count) {
+    this.itemCount = count;
+  }
 }
